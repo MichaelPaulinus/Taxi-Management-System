@@ -24,7 +24,7 @@ void TaxiCoZa::on_loginButton_clicked() {
 
 	// queries to be written
 	QSqlQuery query("C:/Users/Michael/TaxiDB.db");
-	query.exec("SELECT name FROM riders WHERE surname = 'Mashabane'");
+	query.exec("SELECT name FROM riders WHERE surname = 'Mashabane'"); // incorrect query
 	emailInput = query.value(0).toString();
 	ui.emailLabel->setText(emailInput);
 
