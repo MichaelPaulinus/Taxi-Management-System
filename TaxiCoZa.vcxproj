@@ -42,11 +42,11 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>msvc2017_64</QtInstall>
+    <QtInstall>msvc2019_64</QtInstall>
     <QtModules>core;gui;sql;widgets</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>msvc2017_64</QtInstall>
+    <QtInstall>msvc2019_64</QtInstall>
     <QtModules>core;gui;sql;widgets</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -83,6 +83,7 @@
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Register.cpp" />
     <ClCompile Include="Rider.cpp" />
     <ClCompile Include="TaxiCoZa.cpp" />
   </ItemGroup>
@@ -90,6 +91,7 @@
     <QtMoc Include="TaxiCoZa.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="Register.ui" />
     <QtUic Include="TaxiCoZa.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +100,11 @@
   <ItemGroup>
     <ClInclude Include="Driver.h" />
     <ClInclude Include="Person.h" />
+    <QtMoc Include="Register.h" />
     <ClInclude Include="Rider.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

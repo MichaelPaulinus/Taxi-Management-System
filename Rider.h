@@ -17,6 +17,6 @@ public:
 
 	// constructors
 	Rider();
-	Rider(std::string, std::string, int, int, bool);
+	Rider(std::string, std::string, std::string, int, int, bool);
 };
 

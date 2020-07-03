@@ -9,6 +9,7 @@ void Driver::updateAccount(double money) {
 Driver::Driver() {
 	driverid++;
 	std::string name = "Not Specified";
+	std::string surname = "Not Specified";
 	std::string email = "Not Specified";
 	int id = 0;
 	int pNum = 0;
@@ -17,9 +18,10 @@ Driver::Driver() {
 	int numofTrips = 0;
 }
 
-Driver::Driver(std::string name, std::string email, int id, int pNum, bool active) {
+Driver::Driver(std::string name, std::string surname, std::string email, int id, int pNum, bool active) {
 	driverid++;
 	this->name = name;
+	this->surname = surname;
 	this->email = email;
 	this->id = id;
 	this->pNum = pNum;

@@ -17,6 +17,6 @@ public:
 	void updateAccount(double money);
 
 	Driver();
-	Driver(std::string, std::string, int, int, bool);
+	Driver(std::string, std::string, std::string, int, int, bool);
 };
 

@@ -9,8 +9,9 @@ Person::Person() {
 	float radius = 0;
 }
 
-Person::Person(std::string name, std::string email, int id, int pNum) {
+Person::Person(std::string name, std::string surname, std::string email, int id, int pNum) {
 	this->name = name;
+	this->surname = surname;
 	this->email = email;
 	this->id = id;
 	this->pNum = pNum;
@@ -20,6 +21,10 @@ Person::Person(std::string name, std::string email, int id, int pNum) {
 // set methods
 void Person::setName(std::string name) {
 	this->name = name;
+}
+
+void Person::setSurname(std::string surname) {
+	this->surname = surname;
 }
 
 void Person::setEmail(std::string email) {
@@ -41,6 +46,10 @@ void Person::setRadius(float radius) {
 // get methods
 std::string Person::getName() {
 	return name;
+}
+
+std::string Person::getSurname() {
+	return surname;
 }
 
 std::string Person::getEmail() {

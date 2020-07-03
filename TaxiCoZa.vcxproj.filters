@@ -40,14 +40,23 @@
     <ClCompile Include="Rider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Register.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="TaxiCoZa.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Register.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="TaxiCoZa.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Register.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -66,5 +75,8 @@
     <ClInclude Include="Rider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

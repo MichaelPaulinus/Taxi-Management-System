@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>408</width>
+    <width>398</width>
     <height>438</height>
    </rect>
   </property>
@@ -103,6 +103,19 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="statusofLogin">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>400</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#005500;&quot;&gt;Database Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
