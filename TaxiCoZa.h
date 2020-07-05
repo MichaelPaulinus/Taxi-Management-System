@@ -47,4 +47,5 @@ private:
 private slots:
 	void on_loginButton_clicked();
 	void on_signupButton_clicked();
+	
 };

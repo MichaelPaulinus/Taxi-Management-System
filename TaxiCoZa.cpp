@@ -1,4 +1,5 @@
 #include "TaxiCoZa.h"
+#include "LOGIN.h"
 
 TaxiCoZa::TaxiCoZa(QWidget *parent)
 	: QWidget(parent)
@@ -37,6 +38,13 @@ void TaxiCoZa::on_loginButton_clicked() {
 		if (count == 1) {
 			QMessageBox::information(this, "Success", "CORRECT PASSWORD ENTERED!!!");
 			TaxiCoZa::connClose();
+			LOGIN log;
+			TaxiCoZa::connClose();
+			this->hide();
+			log.setModal(true);
+			log.exec();
+			
+			
 			// before opening new window, close connection
 		}
 		// scenario for a duplicate
@@ -48,7 +56,7 @@ void TaxiCoZa::on_loginButton_clicked() {
 			QMessageBox::critical(this, "Error", "INCORRECT EMAIL OR PASSWORD ENTERED!!!");
 		}
 	}
-
+	
 }
 
 void TaxiCoZa::on_signupButton_clicked()

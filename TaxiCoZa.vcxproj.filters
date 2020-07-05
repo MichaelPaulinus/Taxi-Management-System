@@ -43,6 +43,18 @@
     <ClCompile Include="Register.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LOGIN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ride.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="afterRide.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="endoftrip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="TaxiCoZa.h">
@@ -51,12 +63,36 @@
     <QtMoc Include="Register.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="LOGIN.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Ride.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="afterRide.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="endoftrip.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="TaxiCoZa.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="Register.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="LOGIN.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Ride.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="afterRide.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="endoftrip.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
