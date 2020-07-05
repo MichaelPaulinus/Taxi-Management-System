@@ -10,19 +10,20 @@
 #include <QFileInfo>
 #include <QSqlError>
 #include "TaxiCoZa.h"
+#include "ui_LOGIN.h"
 
-
-class Register : public QDialog
+class LOGIN : public QDialog
 {
 	Q_OBJECT
 
 public:
-	Register(QWidget *parent = Q_NULLPTR);
-	~Register();
+	LOGIN(QWidget *parent = Q_NULLPTR);
+	~LOGIN();
 
 private:
-	Ui::Register ui;
+	Ui::LOGIN ui;
 
 private slots:
-	void on_registerButton_clicked();
+	void on_RideButton_clicked();
 };
+

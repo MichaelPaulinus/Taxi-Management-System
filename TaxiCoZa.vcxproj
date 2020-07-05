@@ -80,10 +80,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="afterRide.cpp" />
     <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="endoftrip.cpp" />
+    <ClCompile Include="LOGIN.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Register.cpp" />
+    <ClCompile Include="Ride.cpp" />
     <ClCompile Include="Rider.cpp" />
     <ClCompile Include="TaxiCoZa.cpp" />
   </ItemGroup>
@@ -91,16 +95,24 @@
     <QtMoc Include="TaxiCoZa.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="afterRide.ui" />
+    <QtUic Include="endoftrip.ui" />
+    <QtUic Include="LOGIN.ui" />
     <QtUic Include="Register.ui" />
+    <QtUic Include="Ride.ui" />
     <QtUic Include="TaxiCoZa.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="TaxiCoZa.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="afterRide.h" />
     <ClInclude Include="Driver.h" />
+    <QtMoc Include="LOGIN.h" />
+    <QtMoc Include="endoftrip.h" />
     <ClInclude Include="Person.h" />
     <QtMoc Include="Register.h" />
+    <QtMoc Include="Ride.h" />
     <ClInclude Include="Rider.h" />
   </ItemGroup>
   <ItemGroup>
