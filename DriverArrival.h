@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QDialog>
-#include "ui_Register.h"
+#include "ui_DriverArrival.h"
 #include <QtSql>
 #include <QSqlDatabase> // means to add a database
 #include <QSqlQuery> // means of executing SQL queries
@@ -10,20 +10,19 @@
 #include <QFileInfo>
 #include <QSqlError>
 #include "TaxiCoZa.h"
-#include "Book.h"
+#include "TripCompleted.h"
 
-
-class Register : public QDialog
+class DriverArrival : public QDialog
 {
 	Q_OBJECT
 
 public:
-	Register(QWidget *parent = Q_NULLPTR);
-	~Register();
+	DriverArrival(QWidget *parent = Q_NULLPTR);
+	~DriverArrival();
 
 private:
-	Ui::Register ui;
+	Ui::DriverArrival ui;
 
 private slots:
-	void on_registerButton_clicked();
+	void on_acceptButton_clicked();
 };

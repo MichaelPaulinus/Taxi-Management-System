@@ -22,13 +22,6 @@ Register::~Register()
 void Register::on_registerButton_clicked() {
 	TaxiCoZa conn;
 
-	if (conn.connOpen()) {
-		qDebug() << "Database Connected!";
-	}
-	else {
-		qDebug() << "Database Not Connected!";
-	}
-
 	// store the data the user entered into varaibles
 	QString nameInput = ui.nameEdit_2->text();
 	QString surnameInput = ui.surnameEdit_2->text();
@@ -50,8 +43,12 @@ void Register::on_registerButton_clicked() {
 
 	// if the query executes
 	if (query.exec()) {
-		QMessageBox::information(this, "Success", "Data saved!");
+		QMessageBox::information(this, "Success", "Data saved successfuly!");
+		this->hide();
 		conn.connClose();
+		Book b;
+		b.setModal(true);
+		b.exec();
 	}
 	else {
 		QMessageBox::critical(this, "Error", query.lastError().text());
