@@ -8,25 +8,30 @@ DriverArrival::DriverArrival(QWidget *parent)
 	ui.driverRoute->setMovie(movie);
 	movie->start();
 
+	if (conn.connOpen()) ui.status->setText("Database Connected...");
+	else ui.status->setText("Database NOT Connected...");
 
-	TaxiCoZa conn;
-	if (conn.connOpen()) {
-		ui.status->setText("Database Connected...");
-	}
-	else {
-		ui.status->setText("Database Not Connected...");
-	}
 }
 
-DriverArrival::~DriverArrival()
-{
+DriverArrival::~DriverArrival() {
+
 }
 
 void DriverArrival::on_acceptButton_clicked() {
-	TaxiCoZa conn;
-	conn.close();
-	this->hide();
 	TripCompleted t;
-	t.setModal(true);
+	t.setDriverDetailsT(DriverObj);
+	this->hide();
 	t.exec();
+}
+
+void DriverArrival::setDriverDetailsD(Driver d) {
+	ui.label->setText(QString::fromStdString(d.getName() + " is on his way!"));
+	ui.driverName->setText("Driver Name: " + QString::fromStdString(d.getName()));
+	ui.numPlate->setText("Number Plate: " + QString::fromStdString(d.getNumPlate()));
+	std::string rating = std::to_string(d.getRating());
+	ui.avgRating->setText("Average Rating: " + QString::fromStdString(rating));
+	QPixmap pixmap(QString::fromStdString(d.getPicture()));
+	ui.driverImage->setPixmap(pixmap.scaled(ui.driverImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	QPixmap pixmap2(QString::fromStdString(d.getVehicle()));
+	ui.carImage->setPixmap(pixmap2.scaled(ui.carImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }

@@ -2,15 +2,9 @@
 
 #include <QDialog>
 #include "ui_Register.h"
-#include <QtSql>
-#include <QSqlDatabase> // means to add a database
-#include <QSqlQuery> // means of executing SQL queries
-#include <QMessageBox>
-#include <QDebug>
-#include <QFileInfo>
-#include <QSqlError>
-#include "TaxiCoZa.h"
+#include "Connection.h"
 #include "Book.h"
+#include "Rider.h"
 
 
 class Register : public QDialog

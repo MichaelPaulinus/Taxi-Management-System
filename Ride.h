@@ -2,16 +2,10 @@
 
 #include <QDialog>
 #include "ui_Ride.h"
-#include <QtSql>
-#include <QSqlDatabase> // means to add a database
-#include <QSqlQuery> // means of executing SQL queries
-#include <QMessageBox>
-#include <QDebug>
-#include <QFileInfo>
-#include <QSqlError>
+#include "Connection.h"
+#include "Utility.h"
 #include <QPixmap>
 #include <QIcon>
-#include "TaxiCoZa.h"
 #include "DriverArrival.h"
 
 class Ride : public QDialog
@@ -21,6 +15,7 @@ class Ride : public QDialog
 public:
 	Ride(QWidget *parent = Q_NULLPTR);
 	~Ride();
+	bool carX;
 
 private:
 	Ui::Ride ui;
@@ -29,4 +24,5 @@ private slots:
 	void on_confirmButton_clicked();
 	void on_carxButton_clicked();
 	void on_carxlButton_clicked();
+	void on_comboBoxDestination_currentIndexChanged(const QString& arg1);
 };

@@ -114,7 +114,7 @@
     <string>Register</string>
    </property>
   </widget>
-  <widget class="QLabel" name="statusofRegister">
+  <widget class="QLabel" name="status">
    <property name="geometry">
     <rect>
      <x>120</x>

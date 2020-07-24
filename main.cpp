@@ -1,11 +1,6 @@
 #include "TaxiCoZa.h"
 #include <QtWidgets/QApplication>
-#include <QtSql>
-#include <QSqlDatabase> // means to add a database
-#include <QSqlQuery> // means of executing SQL queries
-#include <QDebug>
-#include <QFileInfo>
-#include <QSqlError>
+#include "Driver.h"
 
 int main(int argc, char *argv[])
 {

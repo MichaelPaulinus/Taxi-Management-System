@@ -1,16 +1,13 @@
 #pragma once
 
 #include <QDialog>
+#include <QMovie>
 #include "ui_DriverArrival.h"
-#include <QtSql>
-#include <QSqlDatabase> // means to add a database
-#include <QSqlQuery> // means of executing SQL queries
-#include <QMessageBox>
-#include <QDebug>
-#include <QFileInfo>
-#include <QSqlError>
-#include "TaxiCoZa.h"
+#include <string>
+#include "Connection.h"
+#include "Driver.h"
 #include "TripCompleted.h"
+
 
 class DriverArrival : public QDialog
 {
@@ -19,6 +16,7 @@ class DriverArrival : public QDialog
 public:
 	DriverArrival(QWidget *parent = Q_NULLPTR);
 	~DriverArrival();
+	void setDriverDetailsD(Driver);
 
 private:
 	Ui::DriverArrival ui;

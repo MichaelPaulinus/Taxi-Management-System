@@ -6,7 +6,6 @@ Person::Person() {
 	std::string email = "Not Specified";
 	int id = 0;
 	int pNum = 0;
-	float radius = 0;
 }
 
 Person::Person(std::string name, std::string surname, std::string email, int id, int pNum) {
@@ -15,7 +14,6 @@ Person::Person(std::string name, std::string surname, std::string email, int id,
 	this->email = email;
 	this->id = id;
 	this->pNum = pNum;
-	float radius = 0;
 }
 
 // set methods
@@ -35,15 +33,23 @@ void Person::setID(int id) {
 	this->id = id;
 }
 
-void Person::setNum(int pNum) {
+void Person::setPnum(int pNum) {
 	this->pNum = pNum;
 }
 
-void Person::setRadius(float radius) {
-	this->radius = radius;
+void Person::setAccount(double account) {
+	this->account = account;
+}
+
+void Person::setNumofTrips(int numofTrips) {
+	this->numofTrips = numofTrips;
 }
 
 // get methods
+int Person::getNumofTrips() {
+	return this->numofTrips;
+}
+
 std::string Person::getName() {
 	return name;
 }
@@ -60,10 +66,10 @@ int Person::getID() {
 	return id;
 }
 
-int Person::getNum() {
+int Person::getPnum() {
 	return pNum;
 }
 
-float Person::getRadius() {
-	return radius;
+double Person::getAccount() {
+	return account;
 }

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>361</width>
-    <height>592</height>
+    <height>658</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>-20</x>
-     <y>540</y>
+     <y>590</y>
      <width>401</width>
-     <height>61</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
@@ -42,8 +42,8 @@
   <widget class="QLabel" name="status">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>520</y>
+     <x>130</x>
+     <y>570</y>
      <width>111</width>
      <height>16</height>
     </rect>
@@ -52,12 +52,12 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#005500;&quot;&gt;Database Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>450</y>
-     <width>101</width>
+     <x>0</x>
+     <y>470</y>
+     <width>141</width>
      <height>61</height>
     </rect>
    </property>
@@ -88,10 +88,10 @@
   <widget class="QLabel" name="driverImage">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>150</x>
      <y>450</y>
-     <width>71</width>
-     <height>71</height>
+     <width>91</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
@@ -104,7 +104,7 @@
      <x>260</x>
      <y>450</y>
      <width>91</width>
-     <height>71</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">

@@ -1,22 +1,36 @@
 #pragma once
-#include <iostream>
 #include <string>
 #include "Person.h"
+#include "Connection.h"
 
-class Driver :private Person {
-
+class Driver :public Person {
 public:
-	static int driverid;
+	int driverid;
 	int numofTrips;
 	float rating;
 	double account;
-	bool active;
 	std::string vehicle;
+	std::string picture;
+	std::string numPlate;
 
-	//methods
+	// set methods
 	void updateAccount(double money);
+	void setDriverId(int);
+	void setNumPlate(std::string);
+	void setPicture(std::string);
+	void setRating(float);
+	void setVehicle(bool);
+	void updateDatabase(float, float);
+
+	// get methods
+	std::string getPicture();
+	std::string getNumPlate();
+	float getRating();
+	int getDriverId();
+	std::string getVehicle();
 
 	Driver();
-	Driver(std::string, std::string, std::string, int, int, bool);
+	Driver(std::string, std::string, std::string, int, int);
 };
 
+extern Driver DriverObj;

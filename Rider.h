@@ -1,22 +1,27 @@
 #pragma once
 #include <string>
 #include "Person.h"
+#include "TaxiCoZa.h"
 
 class Rider :public Person
 {
-
 public:
-	static int riderid;
+	int riderid;
 	int numofTrips;
-	bool active;
 	std::string password;
-	double account;
 
 	// methods
 	void updateAccount(double money);
+	void uploadData();
+	void setPassword(std::string);
+	void setRiderId(int);
+	std::string getPassword();
+	int getRiderId();
+	void updateDatabase(float);
 
 	// constructors
 	Rider();
-	Rider(std::string, std::string, std::string, int, int, bool);
+	Rider(std::string, std::string, std::string, int, int);
 };
 
+extern Rider RiderObj;
