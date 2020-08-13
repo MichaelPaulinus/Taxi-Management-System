@@ -10,8 +10,14 @@
     <height>559</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>Book</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QPushButton" name="rideButton">
    <property name="geometry">
@@ -22,6 +28,14 @@
      <height>71</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>RIDE NOW!</string>
    </property>
@@ -30,9 +44,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>140</y>
+     <y>110</y>
      <width>351</width>
-     <height>301</height>
+     <height>331</height>
     </rect>
    </property>
    <property name="text">
@@ -42,47 +56,63 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>10</y>
-     <width>171</width>
-     <height>31</height>
+     <x>70</x>
+     <y>0</y>
+     <width>211</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 18pt &quot;Kristen ITC&quot;;</string>
+    <string notr="true">font: 36pt &quot;Kristen ITC&quot;;</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#ff0000;&quot;&gt;TAXI&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#00aa00;&quot;&gt;co&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600; color:#0000ff;&quot;&gt;za&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ff0004;&quot;&gt;TAXI&lt;/span&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#00aa00;&quot;&gt;co&lt;/span&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#5500ff;&quot;&gt;za&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="greetingLabel">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>70</y>
-     <width>141</width>
-     <height>31</height>
+     <x>80</x>
+     <y>50</y>
+     <width>231</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Lucida Calligraphy</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Hello, Rider!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Hello, Michael!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="status">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>460</y>
-     <width>121</width>
+     <x>90</x>
+     <y>470</y>
+     <width>161</width>
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>System</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
-    <string>Database Status</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#005500;&quot;&gt;Database Status&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="TaxiCoZa.qrc"/>
+ </resources>
  <connections/>
 </ui>

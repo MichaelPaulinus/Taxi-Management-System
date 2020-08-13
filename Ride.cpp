@@ -6,6 +6,13 @@ Ride::Ride(QWidget *parent)
 	
 	ui.setupUi(this);
 
+	//set background
+	QPixmap bkgnd(":/Images/babyblue.jpg");
+	bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+	QPalette palette;
+	palette.setBrush(QPalette::Background, bkgnd);
+	this->setPalette(palette);
+
 	QSqlQueryModel* modal1 = new QSqlQueryModel();
 	QSqlQuery *query1 = new QSqlQuery(conn.db);
 	query1->prepare("SELECT address FROM locations WHERE addressID<2");
@@ -20,16 +27,18 @@ Ride::Ride(QWidget *parent)
 	modal2->setQuery(*query2);
 	ui.comboBoxDestination->setModel(modal2);
 
-	QPixmap pixmap("C:/Coding_Projects/C++/TaxiCoZa/Images/UberX.jpg");
+	//setting the images on the buttons
+	QPixmap pixmap(":/Images/UberX.jpg");
 	QIcon ButtonIcon(pixmap);
 	ui.carxButton->setIcon(ButtonIcon);
 	ui.carxButton->setIconSize(pixmap.rect().size());
 
-	QPixmap pixmap2("C:/Coding_Projects/C++/TaxiCoZa/Images/UberXL.jpg");
+	QPixmap pixmap2(":/Images/UberXL.jpg");
 	QIcon ButtonIcon2(pixmap2);
 	ui.carxlButton->setIcon(ButtonIcon2);
 	ui.carxlButton->setIconSize(pixmap2.rect().size());
 
+	//checking the database status
 	if (conn.connOpen()) ui.status->setText("Database Connected...");
 	else ui.status->setText("Database NOT Connected...");
 }
@@ -42,12 +51,14 @@ void Ride::on_confirmButton_clicked() {
 	if (money == 0) QMessageBox::critical(this, "Error", "PLEASE SELECT A CAR TYPE!");
 
 	else {
+		//selecting a driver
 		QSqlQuery query;
 		if (carX == true) query.prepare("SELECT * FROM drivers WHERE vehicle='X' ORDER BY RANDOM() LIMIT 1");
 		else query.prepare("SELECT * FROM drivers WHERE vehicle='XL' ORDER BY RANDOM() LIMIT 1");
 		query.exec();
 		query.first();
 
+		//setting the drivers details from database to the DriverObj
 		DriverObj.setDriverId(query.value(0).toInt());
 		DriverObj.setName(query.value(1).toString().toStdString());
 		DriverObj.setSurname(query.value(2).toString().toStdString());
@@ -59,9 +70,9 @@ void Ride::on_confirmButton_clicked() {
 		DriverObj.setVehicle(carX);
 		DriverObj.setNumofTrips(query.value(9).toString().toInt());
 		DriverObj.setRating(query.value(10).toString().toFloat());
-		DriverObj.setPicture(query.value(11).toString().toStdString());
-		
+		DriverObj.setPicture(query.value(11).toString().toStdString());		
 
+		//bringing up the next GUI
 		this->hide();
 		DriverArrival d;
 		d.setDriverDetailsD(DriverObj);

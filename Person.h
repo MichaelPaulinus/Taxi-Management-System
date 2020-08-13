@@ -13,7 +13,7 @@ protected:
 	int numofTrips;
 
 public:
-	// set methods
+	//set methods
 	void setName(std::string);
 	void setSurname(std::string);
 	void setEmail(std::string);
@@ -22,7 +22,7 @@ public:
 	void setAccount(double);
 	void setNumofTrips(int);
 
-	// get methods
+	//get methods
 	std::string getName();
 	std::string getSurname();
 	std::string getEmail();

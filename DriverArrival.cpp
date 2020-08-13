@@ -4,10 +4,20 @@ DriverArrival::DriverArrival(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
-	QMovie* movie = new QMovie("C:/Coding_Projects/C++/TaxiCoZa/Images/Driver_Arriving.gif");
+
+	//set background
+	QPixmap bkgnd(":/Images/babyblue.jpg");
+	bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+	QPalette palette;
+	palette.setBrush(QPalette::Background, bkgnd);
+	this->setPalette(palette);
+
+	//setting the image of the driver arriving
+	QMovie* movie = new QMovie(":Images/Driver_Arriving.gif");
 	ui.driverRoute->setMovie(movie);
 	movie->start();
 
+	//checking the database status
 	if (conn.connOpen()) ui.status->setText("Database Connected...");
 	else ui.status->setText("Database NOT Connected...");
 
@@ -18,9 +28,10 @@ DriverArrival::~DriverArrival() {
 }
 
 void DriverArrival::on_acceptButton_clicked() {
+	//bringing up the next GUI
+	this->hide();
 	TripCompleted t;
 	t.setDriverDetailsT(DriverObj);
-	this->hide();
 	t.exec();
 }
 
