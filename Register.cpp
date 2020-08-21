@@ -1,4 +1,5 @@
 #include "Register.h"
+//2nd GUI
 
 Register::Register(QWidget *parent)
 	: QDialog(parent)
@@ -17,35 +18,49 @@ Register::Register(QWidget *parent)
 	else ui.status->setText("Database Not Connected...");
 }
 
-Register::~Register()
-{
-}
-
 void Register::on_registerButton_clicked() {
-	QSqlQuery query;
-	query.prepare("SELECT * FROM riders ORDER BY riderID DESC LIMIT 1");
-	query.exec();
-	query.first();
+	//check if user has left a blank detail
+	if (ui.nameEdit_2->text()=="" || ui.surnameEdit_2->text()=="" || ui.idEdit_2->text()=="" || ui.emailEdit_2->text()=="" || ui.pnumEdit_2->text()=="" || ui.passwordEdit_2->text()=="") {
+		QMessageBox::warning(this, "Error", "Please enter all details!");
+	}
+	else {
+		QSqlQuery query;
+		QString emailChecker = ui.emailEdit_2->text();
+		query.prepare("SELECT email FROM riders WHERE email='" + emailChecker + "' ");
+		query.exec();
+		query.first();
+		QString emailChecker2 = query.value(0).toString();
 
-	//setting the new Riders details
-	RiderObj.setRiderId(query.value(0).toInt() + 1);
-	RiderObj.setName(ui.nameEdit_2->text().toStdString());
-	RiderObj.setSurname(ui.surnameEdit_2->text().toStdString());
-	RiderObj.setID(ui.idEdit_2->text().toInt());
-	RiderObj.setEmail(ui.emailEdit_2->text().toStdString());
-	RiderObj.setPnum(ui.pnumEdit_2->text().toInt());
-	RiderObj.setPassword(ui.passwordEdit_2->text().toStdString());
-	RiderObj.setNumofTrips(0);
-	RiderObj.setAccount(10000);
+		//check if user tries to sign-up with used email
+		if (emailChecker != emailChecker2) {
+			query.prepare("SELECT * FROM riders ORDER BY riderID DESC LIMIT 1");
+			query.exec();
+			query.first();
 
-	//uploading the new Riders details onto the database
-	RiderObj.uploadData();
+			//setting the new Riders details
+			RiderObj.setRiderId(query.value(0).toInt() + 1);
+			RiderObj.setName(ui.nameEdit_2->text().toStdString());
+			RiderObj.setSurname(ui.surnameEdit_2->text().toStdString());
+			RiderObj.setID(ui.idEdit_2->text().toInt());
+			RiderObj.setEmail(ui.emailEdit_2->text().toStdString());
+			RiderObj.setPnum(ui.pnumEdit_2->text().toInt());
+			RiderObj.setPassword(ui.passwordEdit_2->text().toStdString());
+			RiderObj.setNumofTrips(0);
+			RiderObj.setAccount(1000);
 
-	QMessageBox::information(this, "Success", "Data saved successfuly!");
+			//uploading the new Riders details onto the database
+			RiderObj.uploadData();
 
-	//bringing up the next GUI
-	this->hide();
-	Book b;
-	b.setGreetingLabel("Hello, " + QString::fromStdString(RiderObj.getName()));
-	b.exec();
+			QMessageBox::information(this, "Success", "Registration completed SUCCESSFULY!");
+
+			//bringing up the next GUI
+			this->hide();
+			Book b;
+			b.setGreetingLabel("Hello, " + QString::fromStdString(RiderObj.getName()));
+			b.exec();
+		}
+		else {
+			QMessageBox::critical(this, "Error", "Email already exists!");
+		}
+	}
 }

@@ -1,5 +1,4 @@
 #pragma once
-
 #include <QDialog>
 #include "ui_Register.h"
 #include "Connection.h"
@@ -13,7 +12,6 @@ class Register : public QDialog
 
 public:
 	Register(QWidget *parent = Q_NULLPTR);
-	~Register();
 
 private:
 	Ui::Register ui;

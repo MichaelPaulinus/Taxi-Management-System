@@ -7,21 +7,23 @@ class Rider :public Person
 {
 public:
 	int riderid;
-	int numofTrips;
 	std::string password;
 
-	// methods
-	void updateAccount(double money);
+	//general methods
+	virtual void updateAccount(double money);
+	virtual void updateDatabase(float, float);
 	void uploadData();
+
+	//set methods
 	void setPassword(std::string);
 	void setRiderId(int);
+
+	//get methods
 	std::string getPassword();
 	int getRiderId();
-	void updateDatabase(float);
-
-	// constructors
+	
+	//constructors
 	Rider();
-	Rider(std::string, std::string, std::string, int, int);
 };
 
 extern Rider RiderObj;

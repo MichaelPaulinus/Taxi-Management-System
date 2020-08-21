@@ -4,12 +4,8 @@ Connection conn;
 
 Connection::Connection() {
 	db = QSqlDatabase::addDatabase("QSQLITE");
-	db.setDatabaseName("C:/Coding_Projects/SQL/Taxi.co.za/TaxiDB.db");
+	db.setDatabaseName("Database/TaxiDB.db");
 	Connection::connOpen();
-}
-
-Connection::~Connection() {
-
 }
 
 bool Connection::connOpen() {

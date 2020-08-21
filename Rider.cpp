@@ -3,16 +3,26 @@
 
 Rider RiderObj;
 
-void Rider::setRiderId(int riderid) {
-	this->riderid = riderid;
+	//constructors
+Rider::Rider() {
+	this->name = "NULL";
+	this->surname = "NULL";
+	this->email = "NULL";
+	this->password = "NULL";
+	this->riderid = NULL;
+	this->id = NULL;
+	this->pNum = NULL;
+	this->account = 1000;
+	this->numofTrips = NULL;	
 }
 
+	//general methods
 void Rider::updateAccount(double money) {
 	account -= money;
 }
 
-void Rider::updateDatabase(float m) {
-	setAccount(RiderObj.getAccount() - m);
+void Rider::updateDatabase(float m, float n) {
+	updateAccount(m);
 	setNumofTrips(RiderObj.getNumofTrips() + 1);
 	QString riderid = QString::number(RiderObj.getRiderId());
 	QString numofTrips = QString::number(RiderObj.getNumofTrips());
@@ -22,39 +32,7 @@ void Rider::updateDatabase(float m) {
 	query.exec();
 }
 
-Rider::Rider() {
-	std::string name = "Not Specified";
-	std::string surname = "Not Specified";
-	std::string email = "Not Specified";
-	int id = 0;
-	int pNum = 0;
-	double account = 10000;
-	int numofTrips = 0;
-}
-
-Rider::Rider(std::string name, std::string surname, std::string email, int id, int pNum) {
-	this->name = name;
-	this->surname = surname;
-	this->email = email;
-	this->id = id;
-	this->pNum = pNum;
-	double account = 10000;
-	int numofTrips = 0;
-}
-
-void Rider::setPassword(std::string password) {
-	this->password = password;
-}
-
-std::string Rider::getPassword() {
-	return password;
-}
-
-int Rider::getRiderId() {
-	return riderid;
-}
-
-void Rider::uploadData() {
+void Rider::uploadData() { //only used in Register GUI
 	QSqlQuery query;
 	query.prepare("INSERT INTO riders(name, surname, email, password, id, pNum, numofTrips, account) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 	query.addBindValue(QString::fromStdString(getName()));
@@ -66,4 +44,22 @@ void Rider::uploadData() {
 	query.addBindValue(QString::number(getNumofTrips()));
 	query.addBindValue(QString::number(getAccount()));
 	query.exec();
+}
+
+	//set methods
+void Rider::setRiderId(int riderid) {
+	this->riderid = riderid;
+}
+
+void Rider::setPassword(std::string password) {
+	this->password = password;
+}
+
+	//get methods
+std::string Rider::getPassword() {
+	return password;
+}
+
+int Rider::getRiderId() {
+	return riderid;
 }

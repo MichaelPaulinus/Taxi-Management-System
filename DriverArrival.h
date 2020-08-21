@@ -15,7 +15,6 @@ class DriverArrival : public QDialog
 
 public:
 	DriverArrival(QWidget *parent = Q_NULLPTR);
-	~DriverArrival();
 	void setDriverDetailsD(Driver);
 
 private:

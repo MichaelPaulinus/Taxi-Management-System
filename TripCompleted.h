@@ -1,5 +1,4 @@
 #pragma once
-
 #include <QDialog>
 #include "ui_TripCompleted.h"
 #include "Connection.h"
@@ -11,10 +10,9 @@ class TripCompleted : public QDialog
 
 public:
 	TripCompleted(QWidget *parent = Q_NULLPTR);
-	~TripCompleted();
 	float f,r;
-	void setDriverDetailsT(Driver);
 	bool checker;
+	void setDriverDetailsT(Driver);
 
 private:
 	Ui::TripCompleted ui;

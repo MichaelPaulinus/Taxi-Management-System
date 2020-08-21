@@ -13,7 +13,6 @@ class Book : public QDialog
 public:
 	Book(QWidget *parent = Q_NULLPTR);
 	void setGreetingLabel(QString);
-	~Book();
 
 private:
 	Ui::Book ui;

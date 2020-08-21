@@ -1,5 +1,4 @@
 #pragma once
-
 #include <QDialog>
 #include "ui_Ride.h"
 #include "Connection.h"
@@ -14,7 +13,6 @@ class Ride : public QDialog
 
 public:
 	Ride(QWidget *parent = Q_NULLPTR);
-	~Ride();
 	bool carX;
 
 private:

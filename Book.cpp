@@ -1,5 +1,5 @@
 #include "Book.h"
-
+//3rd GUI
 
 Book::Book(QWidget *parent)
 	: QDialog(parent)
@@ -21,14 +21,10 @@ Book::Book(QWidget *parent)
 	//checking the database status
 	if (conn.connOpen()) ui.status->setText("Database Connected...");
 	else ui.status->setText("Database NOT Connected...");
-	
-}
-
-Book::~Book() {
-
 }
 
 void Book::on_rideButton_clicked() {
+
 	//bringing up the next GUI
 	this->hide();
 	Ride r;
@@ -36,5 +32,6 @@ void Book::on_rideButton_clicked() {
 }
 
 void Book::setGreetingLabel(QString x) {
+	//sets a custom greeting label for the rider
 	ui.greetingLabel->setText(x);
 }

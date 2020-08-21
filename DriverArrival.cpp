@@ -1,4 +1,5 @@
 #include "DriverArrival.h"
+//5th GUI
 
 DriverArrival::DriverArrival(QWidget *parent)
 	: QDialog(parent)
@@ -20,11 +21,6 @@ DriverArrival::DriverArrival(QWidget *parent)
 	//checking the database status
 	if (conn.connOpen()) ui.status->setText("Database Connected...");
 	else ui.status->setText("Database NOT Connected...");
-
-}
-
-DriverArrival::~DriverArrival() {
-
 }
 
 void DriverArrival::on_acceptButton_clicked() {
@@ -36,6 +32,7 @@ void DriverArrival::on_acceptButton_clicked() {
 }
 
 void DriverArrival::setDriverDetailsD(Driver d) {
+	//used to display the arriving driver's details to the rider on the GUI
 	ui.label->setText(QString::fromStdString(d.getName() + " is on his way!"));
 	ui.driverName->setText("Driver Name: " + QString::fromStdString(d.getName()));
 	ui.numPlate->setText("Number Plate: " + QString::fromStdString(d.getNumPlate()));

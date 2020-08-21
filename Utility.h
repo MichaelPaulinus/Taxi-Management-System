@@ -6,7 +6,7 @@
 class Utility
 {
 public:
-	float calcPrice(float, float, std::string);
+	int calcPrice(float, float, std::string);
 	float calcRating(Driver, float);
 	void tripsDetails(Driver,float, float, std::string);
 };
@@ -15,6 +15,6 @@ extern Utility UtilityObj;
 
 extern std::string destination;
 
-extern float money;
+extern int money;
 
 extern float value;

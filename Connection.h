@@ -11,16 +11,15 @@
 class Connection
 {
 public:
-	// members
+	//members
 	QSqlDatabase db;
 
-	// methods
+	//methods
 	bool connOpen();
 	void connClose();
 
-	// constructors
+	//constructors
 	Connection();
-	~Connection();
 };
 
 extern Connection conn;

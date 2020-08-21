@@ -2,18 +2,12 @@
 #include <string>
 
 Person::Person() {
-	std::string name = "Not Specified";
-	std::string email = "Not Specified";
-	int id = 0;
-	int pNum = 0;
-}
-
-Person::Person(std::string name, std::string surname, std::string email, int id, int pNum) {
-	this->name = name;
-	this->surname = surname;
-	this->email = email;
-	this->id = id;
-	this->pNum = pNum;
+	this->name = "NULL";
+	this->surname = "NULL";
+	this->email = "NULL";
+	this->id = 0;
+	this->pNum = 0;
+	this->numofTrips = 0;
 }
 
 // set methods

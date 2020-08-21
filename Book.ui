@@ -49,8 +49,17 @@
      <height>331</height>
     </rect>
    </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="TaxiCoZa.qrc">:/Images/Map.gif</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label">

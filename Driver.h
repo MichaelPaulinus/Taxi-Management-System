@@ -6,21 +6,22 @@
 class Driver :public Person {
 public:
 	int driverid;
-	int numofTrips;
 	float rating;
-	double account;
 	std::string vehicle;
 	std::string picture;
 	std::string numPlate;
 
+	//general methods
+	virtual void updateAccount(double money);
+	virtual void updateDatabase(float, float);
+
 	// set methods
-	void updateAccount(double money);
 	void setDriverId(int);
 	void setNumPlate(std::string);
 	void setPicture(std::string);
 	void setRating(float);
 	void setVehicle(bool);
-	void updateDatabase(float, float);
+	
 
 	// get methods
 	std::string getPicture();
@@ -30,7 +31,6 @@ public:
 	std::string getVehicle();
 
 	Driver();
-	Driver(std::string, std::string, std::string, int, int);
 };
 
 extern Driver DriverObj;

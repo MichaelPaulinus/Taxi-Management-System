@@ -133,7 +133,7 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>40</y>
+     <y>50</y>
      <width>191</width>
      <height>21</height>
     </rect>
@@ -162,8 +162,17 @@
      <family>Century Gothic</family>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Driver's Map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="TaxiCoZa.qrc">:/Images/Driver_Arriving.gif</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
