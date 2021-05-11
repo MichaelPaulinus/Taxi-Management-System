@@ -6,4 +6,4 @@ In order to create the necessary classes used in this project, C++ was used as t
 
 To design the GUI, QT Designer was used.
 
-Lastly a SQLite database was used as opposed to a SQL database.
+Lastly a SQLite database was used.
